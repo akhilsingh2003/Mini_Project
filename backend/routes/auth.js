@@ -15,7 +15,7 @@ router.post("/register",async(req,res)=>{
         res.status(200).json(user)
     }
     catch(err){
-        res.status(401).json(err )
+        res.status(401).json(err)
     }
 
    
@@ -38,11 +38,9 @@ router.post("/login",async (req, res)=>{
 
             const accessToken=jwt.sign({id:user._id,isAdmin:user.isAdmin}
                 ,process.env.SECRET_KEY,{expiresIn:'5d'});
-
             
         const {password, ...info}=user._doc;
-
-        
+                
         res.status(200).json({...info,accessToken});
     }
     catch(err){
