@@ -16,6 +16,8 @@ export default function Login() {
   return (
     <div className="login">
       <form className="loginForm">
+      <span className="admintitle">Admin Login</span>
+
         <input
           type="text"
           placeholder="email"
