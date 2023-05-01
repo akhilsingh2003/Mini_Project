@@ -23,7 +23,8 @@ const App = () => {
         <Route path="/register">
           {!user ? <Register /> : <Redirect to="/" />}
         </Route>
-        <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
+        <Route  path="/login">{!user ? <Login /> : <Redirect to="/" />}
+        </Route>
         {user && (
           <>
             <Route path="/movies">

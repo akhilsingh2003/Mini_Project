@@ -1,4 +1,33 @@
 .home{
     background-color: var(--main-color);
     overflow: hidden;
+
+    .searchbar{
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    margin-bottom: 120px;
+    text-align: center;
+    
+    .search{
+        width: 607px;
+        height: 35px;
+        border-radius: 6px;
+        opacity: .8;
+    }
+    .btn{
+        border-radius: 6px;
+        width: 35px;
+        height: 35px;
+        background-color: red;
+        opacity: .8;
+    }
+ }
+
 }
+
+

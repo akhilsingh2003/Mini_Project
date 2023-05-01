@@ -1,5 +1,6 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import axios from "axios";
+import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import "./featured.scss";
 
@@ -35,7 +36,7 @@ export default function Featured({ type, setGenre }) {
             onChange={(e) => setGenre(e.target.value)}
           >
             <option>Genre</option>
-          <option value="action">Action</option>
+            <option value="action">Action</option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
             <option value="crime">Crime</option>
@@ -52,15 +53,18 @@ export default function Featured({ type, setGenre }) {
           </select>
         </div>
       )}
+      
       <img src={content.img} alt="" />
       <div className="info">
         <img src={content.imgTitle} alt="" />
         <span className="desc">{content.desc}</span>
         <div className="buttons">
-          <button className="play">
+         <Link to='/watch'>
+         <button className="play">
             <PlayArrow />
-            <span>Play</span>
+            Play
           </button>
+         </Link> 
           <button className="more">
             <InfoOutlined />
             <span>Info</span>

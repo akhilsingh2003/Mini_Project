@@ -4,10 +4,13 @@ import "./home.scss";
 import List from "../../components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "../../components/footer/Footer";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
+  const [search, setSearch] = useState('')
+
 
   useEffect(() => {
     const getRandomLists = async () => {
@@ -34,10 +37,20 @@ const Home = ({ type }) => {
   return (
     <div className="home">
       <Navbar />
+    
       <Featured type={type} setGenre={setGenre} />
       {lists.map((list) => (
         <List list={list} />
       ))}
+      <div class="searchbar" style={{ zIndex: "10"  }} >
+                {/* justify-content-center, copy this <form> from navbar for search box */}
+                <input className="form-control search me-2 w-75 bg-white text-dark" type="search" placeholder="Search in here..." aria-label="Search" 
+                value={search} onChange={(e) => { setSearch(e.target.value) }} />
+                <button className="btn text-white bg-danger" onClick={() => { setSearch('') }}>X</button>
+            
+              </div>
+              
+     <Footer/>
     </div>
   );
 };

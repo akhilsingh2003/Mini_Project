@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useRef } from "react";
-import { useState ,useNavigate} from "react";
-import { useHistory , Link } from "react-router-dom";
+import { useState } from "react";
+import {useHistory} from "react-router-dom";
+import logo from "../../img/logo.png";
 import "./register.scss";
+import { Link } from "react-router-dom";
 
 export default function Register() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -17,12 +20,10 @@ export default function Register() {
   const handleStart = () => {
     setEmail(emailRef.current.value);
   }; 
-  // const navigate =useNavigate();
 
-  // const handleClick =()=>{
-  //   navigate("/login")
-
-  // }
+// const handleClick =()=>{
+//   history.push("/login");
+// }
 
   const handleFinish = async (e) => {
     e.preventDefault();
@@ -39,10 +40,10 @@ export default function Register() {
         <div className="wrapper">
           <img
             className="logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+            src={logo}
             alt=""
           />
-          <Link to="/login"><button className="loginButton">Sign In</button></Link>
+        
         </div>
       </div>
       <div className="container">
@@ -53,11 +54,21 @@ export default function Register() {
         </p>
         {!email ? (
           <div className="input">
-            <input type="email" placeholder="email address" ref={emailRef} />
+            <input type="email" placeholder="email address" ref={emailRef} required />
             <button className="registerButton" onClick={handleStart}>
               Get Started
-            </button>
+            </button>    
+            <Link to='/login'>
+            <button  className="reglogin">
+              Sign In
+            </button> 
+            </Link>     
           </div>
+
+         
+        
+           
+          
         ) : (
           <form className="input">
             <input type="username" placeholder="username" ref={usernameRef} />
