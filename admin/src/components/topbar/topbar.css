@@ -59,3 +59,10 @@
 .options{
   cursor: pointer;
 }
+
+.logout{
+  background-color: red;
+  color: white;
+  cursor: pointer;
+
+}

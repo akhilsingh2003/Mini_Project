@@ -9,7 +9,7 @@ export default function WidgetSm() {
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/users?new=true", {
+        const res = await axios.get("/users", {
           headers: {
             token:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTZmYzQ2NDk0Mjc3MTYwNDg4MmMxNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyNTgzMjMxMSwiZXhwIjoxNjI2MjY0MzExfQ.ATXV-1TTWIGyVBttTQSf0erRWjsgZ8jHQv1ZsUixbng",
@@ -38,7 +38,7 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">{user.username}</span>
+              <span className="widgetSmUsername">{user.email}</span>
             </div>
             <button className="widgetSmButton">
               <Visibility className="widgetSmIcon" />
